@@ -20,3 +20,6 @@ bouncer([7, 'ate', '', false, 9]);
 function bouncer(arr) {
   return arr.filter(Boolean);
 }
+
+// arr.filter( function(x) { return Boolean(x); });
+// Boolean() is also a function that return truthy when true;
