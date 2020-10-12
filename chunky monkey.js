@@ -35,7 +35,6 @@ function chunkArrayInGroups(arr, size) {
 
 
   function chunkArrayInGroups(arr, size) {
-    // Break it up.
     var newArr = [];
     var i = 0;
   
@@ -46,3 +45,25 @@ function chunkArrayInGroups(arr, size) {
     return newArr;
   }
   chunkArrayInGroups(["a", "b", "c", "d"], 2);
+
+
+
+  function chunkArrayInGroups(arr, size) {
+    var newArr = [];
+    while (arr.length) {
+      newArr.push(arr.splice(0, size));
+    }
+    return newArr;
+  }
+
+
+
+  function chunkArrayInGroups(arr, size) {
+    if (arr.length <= size) {
+      return [arr];
+    } else {
+      return [arr.slice(0, size)].concat(
+        chunkArrayInGroups(arr.slice(size), size)
+      );
+    }
+  }
