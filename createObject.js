@@ -134,3 +134,87 @@ Bird.prototype = Object.create(Animal.prototype);
 Bird.prototype.eat = function () {
   return 'peck peck peck';
 };
+
+
+
+let flyMixin = function(obj) {
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  }
+};
+
+
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let plane = {
+  model: "777",
+  numPassengers: 524
+};
+
+flyMixin(bird);
+flyMixin(plane);
+bird.fly(); // prints "Flying, wooosh!"
+plane.fly(); // prints "Flying, wooosh!"
+
+
+
+function Bird() {
+  let hatchedEgg = 10; // private variable
+
+  /* publicly available method that a bird object can use */
+  this.getHatchedEggCount = function() { 
+    return hatchedEgg;
+  };
+}
+let ducky = new Bird();
+ducky.getHatchedEggCount(); // returns 10
+
+
+function Bird() {
+  let weight = 15;
+  
+  this.getWeight =()=> weight;
+}
+
+
+(function () {
+  console.log("Chirp, chirp!");
+})(); // this is an anonymous function expression that executes right away
+// Outputs "Chirp, chirp!" immediately
+
+
+
+
+function glideMixin(obj) {
+  obj.glide = function() {
+    console.log("Gliding on the water");
+  };
+}
+function flyMixin(obj) {
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  };
+}
+
+
+let motionModule = (function () {
+  return {
+    glideMixin: function(obj) {
+      obj.glide = function() {
+        console.log("Gliding on the water");
+      };
+    },
+    flyMixin: function(obj) {
+      obj.fly = function() {
+        console.log("Flying, wooosh!");
+      };
+    }
+  }
+})(); // The two parentheses cause the function to be immediately invoked
+
+
+motionModule.glideMixin(duck);
+duck.glide();
