@@ -301,3 +301,121 @@ Array.prototype.myFilter = function(callback){
     return averageRating;
   }
   console.log(getRating(watchList));
+
+
+
+  function ascendingOrder(arr) {
+    return arr.sort(function(a, b) {
+      return a - b;
+    });
+  }
+  ascendingOrder([1, 5, 2, 3, 4]);
+  // Returns [1, 2, 3, 4, 5]
+  
+  function reverseAlpha(arr) {
+    return arr.sort(function(a, b) {
+      return a === b ? 0 : a < b ? 1 : -1;
+    });
+  }
+  reverseAlpha(['l', 'h', 'z', 'b', 's']);
+  // Returns ['z', 's', 'l', 'h', 'b']
+  
+
+
+
+  var globalArray = [5, 6, 3, 2, 9];
+function nonMutatingSort(arr) {
+  // Only change code below this line
+let newArr = [...arr];
+newArr.sort(function(a, b){
+  return a - b;
+})
+return newArr;
+
+  // Only change code above this line
+}
+nonMutatingSort(globalArray);
+
+
+var globalArray = [5, 6, 3, 2, 9];
+function nonMutatingSort(arr) {
+  // Add your code below this line
+  return [].concat(arr).sort(function(a, b) {
+    return a - b;
+  });
+  // Add your code above this line
+}
+nonMutatingSort(globalArray);
+
+
+
+var globalTitle = "Winter Is Coming";
+
+// Add your code below this line
+function urlSlug(title) {
+  return title
+    .split(/\W/)
+    .filter(obj => {
+      return obj !== "";
+    })
+    .join("-")
+    .toLowerCase();
+}
+// Add your code above this line
+
+var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
+
+
+function urlSlug(title) {
+    return title
+      .toLowerCase()
+      .trim()
+      .split(/\s+/)
+      .join("-");
+  }
+
+
+  function checkPositive(arr) {
+    // Only change code below this line
+  return arr.every(function(value){
+    return value  > 0;
+  })
+  
+    // Only change code above this line
+  }
+  checkPositive([1, 2, 3, -4, 5]);
+  function checkPositive(arr) {
+    // Add your code below this line
+  
+    return arr.every(val => val > 0);
+    // Add your code above this line
+  }
+
+
+
+  //Un-curried function
+function unCurried(x, y) {
+    return x + y;
+  }
+  
+  //Curried function
+  function curried(x) {
+    return function(y) {
+      return x + y;
+    }
+  }
+  //Alternative using ES6
+  const curried = x => y => x + y
+  
+  curried(1)(2) // Returns 3
+
+
+
+  function add(x) {
+    // Only change code below this line
+  return y => z=> x+y+z;
+    // Only change code above this line
+  }
+  add(10)(20)(30);
+  
+  
