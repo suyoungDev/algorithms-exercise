@@ -109,3 +109,9 @@ const user4 = {};
 // 뒤에나온 source를 앞에나온걸 덮어씀!
 Object.assign(user4, user);
 console.log(user4);
+
+
+
+
+
+  
