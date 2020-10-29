@@ -43,6 +43,7 @@ const pairs = {
 
 // spread operator, not using split method.
 const pairElement = (str) =>{
+  console.log(...str);
   return [...str].map(c => [c, pairs[c]]);
 }
 
