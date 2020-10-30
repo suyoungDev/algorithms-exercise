@@ -65,3 +65,12 @@ function steamrollArray(arr, flatArr = []) {
 
 
 steamrollArray([1, [2], [3, [[4]]]]);
+
+
+// const omg = arr =>{
+//   for(let i in arr){
+//     return arr[i];
+//   }
+// }
+
+// console.log([1, [2], [3, [[4]]]]);
