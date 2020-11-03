@@ -1,0 +1,97 @@
+<style type='text/scss'>
+  @mixin border-raidus($radius){
+    -webkit-border-radius: $radius;
+    -mox-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+  }
+  
+  
+    #awesome {
+      width: 150px;
+      height: 150px;
+      background-color: green;
+      @include border-radius(15px);
+    }
+  </style>
+  
+  <div id="awesome"></div>
+
+
+
+  <style type='text/scss'>
+@mixin border-stroke($val){
+  @if $val == light{
+    border: 1px solid black;
+  }
+  @else if $val == medium{
+    border: 3px solid black;
+  }
+  @else if $val == heavy{
+    border: 6px solid black;
+  }
+  @else {
+    border: none;
+  }
+}
+
+
+  #box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(medium);
+  }
+</style>
+
+<div id="box"></div>
+
+
+
+<style type='text/scss'>
+@for $j from 1 through 6{
+    .text-#{$j} { font-size: 15px * $j};}
+
+</style>
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+
+
+
+<style type='text/scss'>
+$colors: (color1: blue, color2: black, color3: red);
+
+@each $key, $color in $colors{
+  .#{$color}-bg {background-color: $color;}
+}
+
+
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>
+
+
+
+
+<style type='text/scss'>
+$x:1;
+@while $x < 6{
+    .text-#{$x} {font-size: 15px * $x}
+    $x: $x + 1;
+}
+
+</style>
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
